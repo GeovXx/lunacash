@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* Enables the `dark:` variant to respond to a `.dark` class instead of only OS preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    color-scheme: light;
+
+    --lc-background: oklch(98.2% 0.004 260);
+    --lc-surface: oklch(100% 0 0);
+    --lc-surface-elevated: oklch(99.2% 0.003 260);
+    --lc-border: oklch(90.5% 0.008 260);
+    --lc-foreground: oklch(24% 0.02 265);
+    --lc-foreground-secondary: oklch(42% 0.02 265);
+    --lc-foreground-muted: oklch(58% 0.015 265);
+
+    --lc-primary: oklch(52% 0.19 275);
+    --lc-primary-hover: oklch(45% 0.2 275);
+    --lc-primary-foreground: oklch(99% 0.005 275);
+
+    --lc-success: oklch(58% 0.15 155);
+    --lc-success-subtle: oklch(94% 0.05 155);
+    --lc-warning: oklch(72% 0.16 80);
+    --lc-warning-subtle: oklch(95% 0.07 85);
+    --lc-danger: oklch(55% 0.21 25);
+    --lc-danger-subtle: oklch(94% 0.06 20);
+    --lc-info: oklch(58% 0.14 235);
+    --lc-info-subtle: oklch(94% 0.045 235);
+}
+
+.dark {
+    color-scheme: dark;
+
+    --lc-background: oklch(16% 0.018 260);
+    --lc-surface: oklch(20% 0.018 260);
+    --lc-surface-elevated: oklch(24% 0.018 262);
+    --lc-border: oklch(31% 0.02 262);
+    --lc-foreground: oklch(96% 0.005 260);
+    --lc-foreground-secondary: oklch(80% 0.012 260);
+    --lc-foreground-muted: oklch(62% 0.015 260);
+
+    --lc-primary: oklch(72% 0.15 275);
+    --lc-primary-hover: oklch(78% 0.14 275);
+    --lc-primary-foreground: oklch(14% 0.02 275);
+
+    --lc-success: oklch(74% 0.15 155);
+    --lc-success-subtle: oklch(28% 0.06 155);
+    --lc-warning: oklch(80% 0.14 85);
+    --lc-warning-subtle: oklch(30% 0.06 85);
+    --lc-danger: oklch(70% 0.18 22);
+    --lc-danger-subtle: oklch(30% 0.08 20);
+    --lc-info: oklch(74% 0.11 235);
+    --lc-info-subtle: oklch(28% 0.05 235);
+}
+
+@theme inline {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-background: var(--lc-background);
+    --color-surface: var(--lc-surface);
+    --color-surface-elevated: var(--lc-surface-elevated);
+    --color-border: var(--lc-border);
+    --color-foreground: var(--lc-foreground);
+    --color-foreground-secondary: var(--lc-foreground-secondary);
+    --color-foreground-muted: var(--lc-foreground-muted);
+
+    --color-primary: var(--lc-primary);
+    --color-primary-hover: var(--lc-primary-hover);
+    --color-primary-foreground: var(--lc-primary-foreground);
+
+    --color-success: var(--lc-success);
+    --color-success-subtle: var(--lc-success-subtle);
+    --color-warning: var(--lc-warning);
+    --color-warning-subtle: var(--lc-warning-subtle);
+    --color-danger: var(--lc-danger);
+    --color-danger-subtle: var(--lc-danger-subtle);
+    --color-info: var(--lc-info);
+    --color-info-subtle: var(--lc-info-subtle);
+
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1.25rem;
+
+    --shadow-xs: 0 1px 2px 0 rgb(15 15 25 / 0.05);
+    --shadow-sm: 0 4px 12px -4px rgb(15 15 25 / 0.10);
+    --shadow-md: 0 12px 32px -8px rgb(15 15 25 / 0.16);
+
+    --font-size-display: 2.5rem;
+    --font-size-display--line-height: 1.1;
+    --font-size-h1: 1.875rem;
+    --font-size-h1--line-height: 1.2;
+    --font-size-h2: 1.5rem;
+    --font-size-h2--line-height: 1.3;
+    --font-size-h3: 1.25rem;
+    --font-size-h3--line-height: 1.4;
+    --font-size-caption: 0.75rem;
+    --font-size-caption--line-height: 1.4;
+    --font-size-label: 0.8125rem;
+    --font-size-label--line-height: 1.4;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+}
+
+/* Alpine (bundled with Livewire) uses this to hide elements until it has initialized. */
+[x-cloak] {
+    display: none !important;
+}
