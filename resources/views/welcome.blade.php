@@ -19,8 +19,20 @@
             </div>
             <p class="text-display font-semibold tracking-tight text-foreground">Controle financeiro premium</p>
             <p class="text-lg text-foreground-secondary">Sistema de controle financeiro pessoal, moderno e seguro.</p>
-            <p class="text-sm text-foreground-muted">Base Laravel 12 + Blade + Livewire 3 + Tailwind CSS + Vite pronta para as próximas etapas.</p>
-            @livewire('home-page')
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                @auth
+                    <a href="{{ route('dashboard') }}" class="w-full sm:w-auto px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium shadow-sm hover:bg-primary/90 transition-colors">
+                        Acessar Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="w-full sm:w-auto px-8 py-3 rounded-full bg-surface-elevated border border-border text-foreground font-medium shadow-sm hover:bg-surface-elevated/80 transition-colors">
+                        Entrar
+                    </a>
+                    <a href="{{ route('register') }}" class="w-full sm:w-auto px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium shadow-sm hover:bg-primary/90 transition-colors">
+                        Criar Conta Livremente
+                    </a>
+                @endauth
+            </div>
         </div>
         @livewireScripts
     </body>
