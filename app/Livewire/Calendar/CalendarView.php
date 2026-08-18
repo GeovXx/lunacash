@@ -82,6 +82,6 @@ class CalendarView extends Component
             'days' => $days,
             'monthName' => $date->translatedFormat('F'),
             'year' => $this->currentYear,
-        ])->layout('components.layouts.app');
+        ])->layout('layouts.app');
     }
 }
