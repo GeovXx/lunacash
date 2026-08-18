@@ -88,7 +88,7 @@
                             plotOptions: { bar: { horizontal: false, columnWidth: '55%', borderRadius: 2 } },
                             dataLabels: { enabled: false },
                             stroke: { show: true, width: 2, colors: ['transparent'] },
-                            xaxis: { categories: {!! json_encode($cashFlowChart['labels']) !!}, axisBorder: { show: false }, axisTicks: { show: false } },
+                            xaxis: { categories: {{ json_encode($cashFlowChart['labels']) }}, axisBorder: { show: false }, axisTicks: { show: false } },
                             yaxis: { labels: { formatter: (value) => 'R$ ' + value.toFixed(2) } },
                             fill: { opacity: 1 },
                             colors: ['#10b981', '#ef4444'], // success, destructive
@@ -125,7 +125,7 @@
                         }
                         const options = {
                             series: series,
-                            labels: {!! json_encode($expensesByCategoryChart['labels']) !!},
+                            labels: {{ json_encode($expensesByCategoryChart['labels']) }},
                             chart: { type: 'donut', height: 300, background: 'transparent' },
                             dataLabels: { enabled: false },
                             stroke: { show: false },
