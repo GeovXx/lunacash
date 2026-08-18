@@ -1,17 +1,17 @@
 <?php
 
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Livewire\Accounts;
-use App\Http\Livewire\Auth\Login;
-use App\Http\Livewire\Auth\Register;
-use App\Http\Livewire\Categories;
-use App\Http\Livewire\DesignSystem;
-use App\Http\Livewire\Expenses;
-use App\Http\Livewire\Home;
-use App\Http\Livewire\Incomes;
-use App\Http\Livewire\RecurringProfiles;
-use App\Http\Livewire\Transactions;
-use App\Http\Livewire\Transfers;
+use App\Livewire\Accounts;
+use App\Livewire\Auth\Login;
+use App\Livewire\Auth\Register;
+use App\Livewire\Categories;
+use App\Livewire\DesignSystem;
+use App\Livewire\Expenses;
+use App\Livewire\Home;
+use App\Livewire\Incomes;
+use App\Livewire\RecurringProfiles;
+use App\Livewire\Transactions;
+use App\Livewire\Transfers;
 use App\Livewire\Budgets\BudgetDetail;
 use App\Livewire\Budgets\BudgetsList;
 use App\Livewire\Calendar\CalendarView;
@@ -34,7 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/categorias', Categories::class)->name('categories');
     Route::get('/lancamentos', Transactions::class)->name('transactions');
     // Reports & Export
-    Route::get('/relatorios', App\Http\Livewire\Reports\ReportIndex::class)->name('reports.index');
+    Route::get('/relatorios', App\Livewire\Reports\ReportIndex::class)->name('reports.index');
     Route::get('/exportar/caixa', [App\Http\Controllers\ExportController::class, 'exportCashFlow'])->name('export.cash-flow');
     Route::get('/exportar/categorias', [App\Http\Controllers\ExportController::class, 'exportCategories'])->name('export.categories');
     Route::get('/exportar/posicao', [App\Http\Controllers\ExportController::class, 'exportBalances'])->name('export.balances');
