@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Http\Livewire\GlobalSearch;
-use App\Http\Livewire\HomePage;
-use App\Http\Livewire\NotificationBell;
+use App\Livewire\GlobalSearch;
+use App\Livewire\HomePage;
+use App\Livewire\NotificationBell;
 use App\Models\Account;
 use App\Models\AuditLog;
 use App\Models\Budget;
@@ -18,6 +18,7 @@ use App\Models\CreditCardTransaction;
 use App\Models\FinancialGoal;
 use App\Models\FinancialObligation;
 use App\Models\GoalContribution;
+use App\Models\InstallmentPlan;
 use App\Models\Notification;
 use App\Models\RecurringProfile;
 use App\Models\Tag;
@@ -27,6 +28,7 @@ use App\Models\Transfer;
 use App\Observers\AuditObserver;
 use App\Policies\CategoryPolicy;
 use App\Policies\UserOwnedPolicy;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
@@ -46,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        \Illuminate\Database\Eloquent\Model::shouldBeStrict(! app()->isProduction());
+        Model::shouldBeStrict(! app()->isProduction());
 
         Livewire::component('home-page', HomePage::class);
         Livewire::component('global-search', GlobalSearch::class);
@@ -66,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
             CreditCardTransaction::class,
             FinancialGoal::class,
             FinancialObligation::class,
-            \App\Models\InstallmentPlan::class,
+            InstallmentPlan::class,
             GoalContribution::class,
             Notification::class,
             RecurringProfile::class,
