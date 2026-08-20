@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Livewire;
 
-use App\Http\Livewire\NotificationBell;
+use App\Livewire\NotificationBell;
 use App\Models\Account;
 use App\Models\User;
 use App\Services\NotificationService;

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\Categories;
+use App\Livewire\Categories;
 use App\Models\Category;
 use App\Models\User;
 use Database\Seeders\CategorySeeder;

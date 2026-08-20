@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\Transfers;
+use App\Livewire\Transfers;
 use App\Models\Account;
 use App\Models\AccountType;
 use App\Models\Transaction;

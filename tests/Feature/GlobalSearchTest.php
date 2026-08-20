@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\GlobalSearch;
+use App\Livewire\GlobalSearch;
 use App\Models\Account;
 use App\Models\Category;
 use App\Models\CreditCard;

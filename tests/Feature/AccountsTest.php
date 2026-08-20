@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\Accounts;
+use App\Livewire\Accounts;
 use App\Models\Account;
 use App\Models\AccountType;
 use App\Models\User;

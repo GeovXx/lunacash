@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\Expenses;
+use App\Livewire\Expenses;
 use App\Models\Account;
 use App\Models\AccountType;
 use App\Models\Category;
